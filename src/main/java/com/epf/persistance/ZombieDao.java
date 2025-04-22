@@ -22,7 +22,7 @@ public class ZombieDao implements zombiedaoIn{
     }
 
     @Override
-    public Zombie getZombieById(int id) {
+    public Zombie getZombieById(Integer id) {
         String sql = "SELECT * FROM ZOMBIE WHERE id_zombie = ?";
         Zombie zombie = jdbcTemplate.queryForObject(sql,  new ZombieRowMapper(),id);
         return zombie;
@@ -36,7 +36,7 @@ public class ZombieDao implements zombiedaoIn{
     }
 
     @Override
-    public Zombie updateZombie(Zombie zombie,int id) {
+    public Zombie updateZombie(Zombie zombie,Integer id) {
         String sql = "UPDATE Zombie SET nom = ?, point_de_vie = ?, attaque_par_seconde = ?, degat_attaque = ?, vitesse_de_deplacement = ?, chemin_image = ?, id_map = ? WHERE id_zombie = ?";
         jdbcTemplate.update(sql, zombie.getNom(), zombie.getpoint_de_vie(), zombie.getattaque_par_seconde(), zombie.getdegat_attaque(),
                 zombie.getvitesse_de_deplacement(), zombie.getchemin_image(), zombie.getid_map(), id);
@@ -44,19 +44,19 @@ public class ZombieDao implements zombiedaoIn{
     }
 
     @Override
-    public void deleteZombie(int id) {
+    public void deleteZombie(Integer id) {
         String sql = "DELETE FROM Zombie WHERE id_zombie = ?";
         jdbcTemplate.update(sql, id);
     }
 
     @Override
-    public List<Zombie> getZombiesByMapId(int mapId) {
+    public List<Zombie> getZombiesByMapId(Integer mapId) {
         String sql = "SELECT * FROM Zombie WHERE id_map = ?";
         return jdbcTemplate.query(sql, new Object[]{mapId}, new ZombieRowMapper());
     }
 
     @Override
-    public void updateZombiesByMapId(int mapId) {
+    public void updateZombiesByMapId(Integer mapId) {
         String sql = "UPDATE Zombie SET id_map = NULL WHERE id_map = ?";
         jdbcTemplate.update(sql, mapId);
     }

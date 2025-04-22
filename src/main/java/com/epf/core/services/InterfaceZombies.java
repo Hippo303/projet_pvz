@@ -6,9 +6,9 @@ import java.util.List;
 
 public interface InterfaceZombies {
     Zombie createZombie(Zombie zombie);
-    Zombie updateZombie(Zombie zombie,int id);
-    Zombie getZombieById(int id);
+    Zombie updateZombie(Zombie zombie,Integer id);
+    Zombie getZombieById(Integer id);
 
     List<Zombie> getAllZombies();
-    void deleteZombie(int id);
+    void deleteZombie(Integer id);
 }

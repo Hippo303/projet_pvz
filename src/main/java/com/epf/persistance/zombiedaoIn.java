@@ -7,11 +7,11 @@ import java.util.List;
 //tu récuperes ta db et tu la renvoies
 public interface zombiedaoIn {
     Zombie createZombie(Zombie zombie);
-    Zombie getZombieById(int id);
+    Zombie getZombieById(Integer id);
     List<Zombie> getAllZombies();
-    Zombie updateZombie(Zombie zombie,int id);
-    void deleteZombie(int id);
-    List<Zombie> getZombiesByMapId(int mapId);
+    Zombie updateZombie(Zombie zombie,Integer id);
+    void deleteZombie(Integer id);
+    List<Zombie> getZombiesByMapId(Integer mapId);
 
-    void updateZombiesByMapId(int mapId);
+    void updateZombiesByMapId(Integer mapId);
 }

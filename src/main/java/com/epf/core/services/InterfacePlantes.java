@@ -7,8 +7,8 @@ import java.util.List;
 
 public interface InterfacePlantes {
     Plante createPlante(Plante plante);
-    Plante getPlanteById(int id);
+    Plante getPlanteById(Integer id);
     List<Plante> getAllPlantes();
-    void deletePlante(int id);
-    Plante updatePlante(Plante plante,int id);
+    void deletePlante(Integer id);
+    Plante updatePlante(Plante plante,Integer id);
 }

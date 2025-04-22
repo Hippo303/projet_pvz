@@ -17,7 +17,7 @@ public class PlanteServices implements InterfacePlantes{
     }
 
     @Override
-    public Plante getPlanteById(int id) {
+    public Plante getPlanteById(Integer id) {
         return planteDao.getPlanteById(id);
     }
     @Override
@@ -26,11 +26,11 @@ public class PlanteServices implements InterfacePlantes{
     }
 
     @Override
-    public Plante updatePlante(Plante plante, int id) {
+    public Plante updatePlante(Plante plante, Integer id) {
         return planteDao.updatePlante(plante, id);
     }
     @Override
-    public void deletePlante(int id) {
+    public void deletePlante(Integer id) {
         planteDao.deletePlante(id);
     }
     @Override

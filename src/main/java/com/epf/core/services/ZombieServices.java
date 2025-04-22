@@ -20,11 +20,11 @@ public class ZombieServices implements InterfaceZombies{
         return zombieDao.createZombie(zombie);
     }
     @Override
-    public Zombie updateZombie(Zombie zombie,int id) {
+    public Zombie updateZombie(Zombie zombie,Integer id) {
         return zombieDao.updateZombie(zombie,id);
     }
     @Override
-    public Zombie getZombieById(int id) {
+    public Zombie getZombieById(Integer id) {
         return zombieDao.getZombieById(id);
     }
     @Override
@@ -32,7 +32,7 @@ public class ZombieServices implements InterfaceZombies{
         return zombieDao.getAllZombies();
     }
     @Override
-    public void deleteZombie(int id) {
+    public void deleteZombie(Integer id) {
         zombieDao.deleteZombie(id);
     }
 

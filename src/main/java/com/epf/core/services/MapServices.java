@@ -25,11 +25,11 @@ public class MapServices implements InterfaceMaps{
     }
 
     @Override
-    public Map updateMap(Map map, int id) {
+    public Map updateMap(Map map, Integer id) {
         return mapDao.updateMap(map, id);
     }
     @Override
-    public Map getMapById(int id) {
+    public Map getMapById(Integer id) {
         return mapDao.getMapById(id);
     }
     @Override
@@ -37,7 +37,7 @@ public class MapServices implements InterfaceMaps{
         return mapDao.getAllMaps();
     }
     @Override
-    public void deleteMap(int id) {
+    public void deleteMap(Integer id) {
         zombieDao.updateZombiesByMapId(id);
         mapDao.deleteMap(id);
     }

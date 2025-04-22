@@ -6,8 +6,8 @@ import java.util.List;
 
 public interface daomapIn {
     Map createMap(Map map);
-    Map getMapById(int id);
+    Map getMapById(Integer id);
     List<Map> getAllMaps();
-    Map updateMap(Map map,int id);
-    void deleteMap(int id);
+    Map updateMap(Map map,Integer id);
+    void deleteMap(Integer id);
 }

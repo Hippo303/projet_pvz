@@ -22,7 +22,7 @@ public class MapDao implements daomapIn {
     }
 
     @Override
-    public Map getMapById(int id) {
+    public Map getMapById(Integer id) {
         String sql = "SELECT * FROM Map WHERE id_map = ?";
         return jdbcTemplate.queryForObject(sql, new MapRowMapper());
     }
@@ -34,14 +34,14 @@ public class MapDao implements daomapIn {
     }
 
     @Override
-    public Map updateMap(Map map,int id) {
+    public Map updateMap(Map map,Integer id) {
         String sql = "UPDATE Map SET ligne = ?, colonne = ?, chemin_image = ? WHERE id_map = ?";
         jdbcTemplate.update(sql, map.getLigne(), map.getColonne(), map.getCheminImage(), id);
         return map;
     }
 
     @Override
-    public void deleteMap(int id) {
+    public void deleteMap(Integer id) {
         String sql = "DELETE FROM Map WHERE id_map = ?";
         jdbcTemplate.update(sql, id);
     }

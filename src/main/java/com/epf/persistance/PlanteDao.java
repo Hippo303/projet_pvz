@@ -23,7 +23,7 @@ public class PlanteDao implements plantedaoIn{
     }
 
     @Override
-    public Plante getPlanteById(int id) {
+    public Plante getPlanteById(Integer id) {
         String sql = "SELECT * FROM Plante WHERE id_plante = ?";
         return jdbcTemplate.queryForObject(sql,new PlanteRowMapper(),id);
     }
@@ -34,7 +34,7 @@ public class PlanteDao implements plantedaoIn{
         return jdbcTemplate.query(sql, new PlanteRowMapper());
     }
 
-    public Plante updatePlante(Plante plante, int id) {
+    public Plante updatePlante(Plante plante, Integer id) {
         String sql = "UPDATE Plante SET nom = ?, point_de_vie = ?, attaque_par_seconde = ?, degat_attaque = ?, cout = ?, soleil_par_seconde = ?, effet = ?, chemin_image = ? WHERE id_plante = ?";
         jdbcTemplate.update(sql, plante.getNom(), plante.getpoint_de_vie(), plante.getattaque_par_seconde(), plante.getdegat_attaque(),
                 plante.getCout(), plante.getsoleil_par_seconde(), plante.getEffet(), plante.getCheminImage(), id);
@@ -42,7 +42,7 @@ public class PlanteDao implements plantedaoIn{
     }
 
     @Override
-    public void deletePlante(int id) {
+    public void deletePlante(Integer id) {
         String sql = "DELETE FROM Plante WHERE id_plante = ?";
         jdbcTemplate.update(sql, id);
     }
