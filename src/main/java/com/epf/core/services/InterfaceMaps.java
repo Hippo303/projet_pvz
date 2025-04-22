@@ -1,13 +1,13 @@
-package com.epf.persistance;
+package com.epf.core.services;
 
 import com.epf.core.model.Map;
 
 import java.util.List;
 
-public interface daomapIn {
+public interface InterfaceMaps {
     Map createMap(Map map);
-    Map getMapById(int id);
-    List<Map> getAllMaps();
     Map updateMap(Map map,int id);
+    List<Map> getAllMaps();
+    Map getMapById(int id);
     void deleteMap(int id);
 }

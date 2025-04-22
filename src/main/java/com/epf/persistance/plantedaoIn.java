@@ -1,11 +1,13 @@
 package com.epf.persistance;
 
+import com.epf.core.model.Plante;
+
 import java.util.List;
 
 public interface plantedaoIn {
-        void create(Plante plante);
-        Plante getById(int id);
-        List<Plante> getAll();
-        void update(Plante plante);
-        void delete(int id);
+        Plante createPlante(Plante plante);
+        Plante getPlanteById(int id);
+        List<Plante> getAllPlantes();
+        Plante updatePlante(Plante plante,int id);
+        void deletePlante(int id);
 }

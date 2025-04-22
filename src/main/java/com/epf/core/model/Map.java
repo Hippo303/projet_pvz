@@ -1,22 +1,22 @@
-package com.epf.persistance;
+package com.epf.core.model;
 
-public class Maps {
-    private int id;
+public class Map {
+    private int id_map;
     private int ligne;
     private int colonne;
-    private String cheminImage;
+    private String chemin_image;
 
-    public Maps(int id, int ligne, int colonne, String cheminImage) {
-        this.id = id;
+    public Map(int id_map, int ligne, int colonne, String chemin_image) {
+        this.id_map = id_map;
         this.ligne = ligne;
         this.colonne = colonne;
-        this.cheminImage = cheminImage;
+        this.chemin_image = chemin_image;
     }
     public int getId() {
-        return id;
+        return id_map;
     }
-    public void setId(int id) {
-        this.id = id;
+    public void setId(int id_map) {
+        this.id_map = id_map;
     }
     public int getLigne() {
         return ligne;
@@ -31,18 +31,18 @@ public class Maps {
         this.colonne = colonne;
     }
     public String getCheminImage() {
-        return cheminImage;
+        return chemin_image;
     }
     public void setCheminImage(String cheminImage) {
-        this.cheminImage = cheminImage;
+        this.chemin_image = cheminImage;
     }
     @Override
     public String toString() {
         return "Map{" +
-                "id=" + id +
+                "id=" + id_map +
                 ", ligne=" + ligne +
                 ", colonne=" + colonne +
-                ", cheminImage='" + cheminImage + '\'' +
+                ", cheminImage='" + chemin_image + '\'' +
                 '}';
     }
 
