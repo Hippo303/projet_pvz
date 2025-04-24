@@ -4,30 +4,34 @@ package com.epf.config;
 
 import com.mysql.cj.jdbc.MysqlDataSource;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.SQLException;
 
 @Configuration
+@EnableWebMvc
+@ComponentScan(basePackages = "com.epf")
 public class DataSourceConnection {
     @Bean
     public DataSource DataSourceConnection(){
-        MysqlDataSource dataSource = new MysqlDataSource();
-        dataSource.setUser("epf");
+        DriverManagerDataSource dataSource = new DriverManagerDataSource();
+        dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/pvz");
+        dataSource.setUsername("epf");
         dataSource.setPassword("mot_de_passe");
-        dataSource.setURL("jdbc:mysql://localhost:3306/pvz");
-        dataSource.setServerName("localhost");
-        dataSource.setPort(3306);
-        dataSource.setDatabaseName("pvz");
         return dataSource;
     }
 
     @Bean
-    public JdbcTemplate JdbcTemplateConnection(DataSource dataSourceval){
-        return new JdbcTemplate(dataSourceval);
+    public JdbcTemplate initjdbcTemplate() {
+        JdbcTemplate jdbcTemplate = new JdbcTemplate(DataSourceConnection());
+        return jdbcTemplate;
     }
 
     public void getConnection(DataSource dataSource) {
