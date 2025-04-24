@@ -1,4 +1,4 @@
-package com.epf.persistance;
+package com.epf.config;
 // la où on fait la connexion avec la base de donnée
 // interface de connexion
 
@@ -15,7 +15,7 @@ import java.sql.SQLException;
 public class DataSourceConnection {
     @Bean
     public DataSource DataSourceConnection(){
-        MysqlDataSource dataSource = new MysqlDataSource(); // classe optimisée pour gérer les connections à une DB MYSQL
+        MysqlDataSource dataSource = new MysqlDataSource();
         dataSource.setUser("epf");
         dataSource.setPassword("mot_de_passe");
         dataSource.setURL("jdbc:mysql://localhost:3306/pvz");
