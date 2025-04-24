@@ -2,7 +2,6 @@ package com.epf.config;
 // la où on fait la connexion avec la base de donnée
 // interface de connexion
 
-import com.mysql.cj.jdbc.MysqlDataSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
