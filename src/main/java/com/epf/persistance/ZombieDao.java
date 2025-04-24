@@ -4,10 +4,11 @@ import com.epf.persistance.mapper.ZombieRowMapper;
 import com.epf.core.model.Zombie;
 
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
 
 
 import java.util.List;
-
+@Repository
 public class ZombieDao implements zombiedaoIn{
     private final JdbcTemplate jdbcTemplate;
     public ZombieDao(JdbcTemplate jdbcTemplate) {
