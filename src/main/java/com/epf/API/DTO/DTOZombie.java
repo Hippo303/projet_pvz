@@ -4,14 +4,14 @@ public class DTOZombie {
     private Integer id_zombie;
     private String nom;
     private Integer point_de_vie;
-    private double attaque_par_seconde;
+    private Double attaque_par_seconde;
     private Integer degat_attaque;
-    private double vitesse_de_deplacement;
+    private Double vitesse_de_deplacement;
     private String chemin_image;
     private Integer id_map;
 
     public DTOZombie() {}
-    public DTOZombie(Integer idZombie, String nom, Integer point_de_vie, double attaque_par_seconde, Integer degat_attaque, double vitesse_de_deplacement, String chemin_image, Integer id_map){
+    public DTOZombie(Integer idZombie, String nom, Integer point_de_vie, Double attaque_par_seconde, Integer degat_attaque, Double vitesse_de_deplacement, String chemin_image, Integer id_map){
         this.id_zombie = idZombie;
         this.nom = nom;
         this.point_de_vie = point_de_vie;
@@ -38,11 +38,11 @@ public class DTOZombie {
     public void setPoint_de_vie(Integer point_de_vie) {
         this.point_de_vie = point_de_vie;
     }
-    public double getAttaque_par_seconde() {
+    public Double getAttaque_par_seconde() {
         return attaque_par_seconde;
     }
 
-    public void setAttaque_par_seconde(double attaque_par_seconde) {
+    public void setAttaque_par_seconde(Double attaque_par_seconde) {
         this.attaque_par_seconde = attaque_par_seconde;
     }
     public Integer getDegat_attaque() {
@@ -51,10 +51,10 @@ public class DTOZombie {
     public void setDegat_attaque(Integer degat_attaque) {
         this.degat_attaque = degat_attaque;
     }
-    public double getVitesse_de_deplacement() {
+    public Double getVitesse_de_deplacement() {
         return vitesse_de_deplacement;
     }
-    public void setVitesse_de_deplacement(double vitesse_de_deplacement) {
+    public void setVitesse_de_deplacement(Double vitesse_de_deplacement) {
         this.vitesse_de_deplacement = vitesse_de_deplacement;
     }
     public String getChemin_image() {

@@ -43,22 +43,32 @@ public class MapController {
 
     @PostMapping
     public ResponseEntity<DTOMap> createMap(@RequestBody DTOMap dtoMap) {
-        Map map = mapperMap.toMapEntity(dtoMap);
-        Map newMap = mapServices.createMap(map);
-        DTOMap newDTOMap = mapperMap.toDTOMap(newMap);
-        return new ResponseEntity<>(newDTOMap, HttpStatus.CREATED);
+        try{
+            Map map = mapperMap.toMapEntity(dtoMap);
+            Map newMap = mapServices.createMap(map);
+            DTOMap newDTOMap = mapperMap.toDTOMap(newMap);
+            return new ResponseEntity<>(newDTOMap, HttpStatus.CREATED);
+        } catch (Exception e) {
+            System.err.println("Erreur lors de la création de la map : " + e.getMessage());
+            e.printStackTrace();
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
     @PutMapping(path = "/{id}")
     public ResponseEntity<DTOMap> updateMap(@PathVariable("id") Integer id, @RequestBody DTOMap dtoMap) {
-        Map map = mapperMap.toMapEntity(dtoMap);
-        Map updatedMap = mapServices.updateMap(map, id);
-        if (updatedMap != null) {
-            DTOMap updatedDTOMap = mapperMap.toDTOMap(updatedMap);
-            return new ResponseEntity<>(updatedDTOMap, HttpStatus.OK);
-        } else {
+        Map existingMap = mapServices.getMapById(id);
+        if (existingMap == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
+
+        if (dtoMap.getLigne() != null) existingMap.setLigne(dtoMap.getLigne());
+        if (dtoMap.getColonne() != null) existingMap.setColonne(dtoMap.getColonne());
+        if (dtoMap.getChemin_image() != null) existingMap.setCheminImage(dtoMap.getChemin_image());
+
+        Map updated = mapServices.updateMap(existingMap, id);
+        DTOMap updatedDTO = mapperMap.toDTOMap(updated);
+        return new ResponseEntity<>(updatedDTO, HttpStatus.OK);
     }
 
     @DeleteMapping(path = "/{id}")

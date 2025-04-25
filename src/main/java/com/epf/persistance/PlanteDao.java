@@ -24,8 +24,11 @@ public class PlanteDao implements plantedaoIn{
 
     @Override
     public Plante getPlanteById(Integer id) {
-        String sql = "SELECT * FROM Plante WHERE id_plante = ?";
-        return jdbcTemplate.queryForObject(sql,new PlanteRowMapper(),id);
+        try{
+            String sql = "SELECT * FROM Plante WHERE id_plante = ?";
+            return jdbcTemplate.queryForObject(sql,new PlanteRowMapper(),id);
+        }catch (org.springframework.dao.EmptyResultDataAccessException e){return null;}
+
     }
 
     @Override
@@ -33,7 +36,7 @@ public class PlanteDao implements plantedaoIn{
         String sql = "SELECT * FROM Plante";
         return jdbcTemplate.query(sql, new PlanteRowMapper());
     }
-
+    @Override
     public Plante updatePlante(Plante plante, Integer id) {
         String sql = "UPDATE Plante SET nom = ?, point_de_vie = ?, attaque_par_seconde = ?, degat_attaque = ?, cout = ?, soleil_par_seconde = ?, effet = ?, chemin_image = ? WHERE id_plante = ?";
         jdbcTemplate.update(sql, plante.getNom(), plante.getpoint_de_vie(), plante.getattaque_par_seconde(), plante.getdegat_attaque(),

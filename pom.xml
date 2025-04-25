@@ -34,7 +34,7 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>8.3.0</version> <!-- Dernière version stable -->
+            <version>8.0.33</version> <!-- Dernière version stable -->
         </dependency>
 
         <!-- Jackson pour la manipulation de JSON -->

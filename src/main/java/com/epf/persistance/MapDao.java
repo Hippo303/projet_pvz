@@ -23,8 +23,10 @@ public class MapDao implements daomapIn {
 
     @Override
     public Map getMapById(Integer id) {
-        String sql = "SELECT * FROM Map WHERE id_map = ?";
-        return jdbcTemplate.queryForObject(sql, new MapRowMapper());
+        try {
+            String sql = "SELECT * FROM Map WHERE id_map = ?";
+            return jdbcTemplate.queryForObject(sql, new MapRowMapper(),id);
+        }catch (org.springframework.dao.EmptyResultDataAccessException e){return null;}
     }
 
     @Override

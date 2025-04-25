@@ -17,16 +17,18 @@ public class ZombieDao implements zombiedaoIn{
 
     @Override
     public Zombie createZombie(Zombie zombie){
-        String sql = "INSERT INTO Zombie (nom, point_de_vie, attaque_par_seconde, degat_attaque, vitesse_de_deplacement, chemin_image, id_map) VALUES(?,?,?,?,?,?,?,?)";
+        String sql = "INSERT INTO Zombie (nom, point_de_vie, attaque_par_seconde, degat_attaque, vitesse_de_deplacement, chemin_image, id_map) VALUES(?,?,?,?,?,?,?)";
         jdbcTemplate.update(sql, zombie.getNom(), zombie.getpoint_de_vie(), zombie.getattaque_par_seconde(), zombie.getdegat_attaque(), zombie.getvitesse_de_deplacement(), zombie.getchemin_image(), zombie.getid_map());
         return zombie;
     }
 
     @Override
     public Zombie getZombieById(Integer id) {
-        String sql = "SELECT * FROM ZOMBIE WHERE id_zombie = ?";
-        Zombie zombie = jdbcTemplate.queryForObject(sql,  new ZombieRowMapper(),id);
-        return zombie;
+        try {
+            String sql = "SELECT * FROM ZOMBIE WHERE id_zombie = ?";
+            Zombie zombie = jdbcTemplate.queryForObject(sql,  new ZombieRowMapper(),id);
+            return zombie;
+        }catch (org.springframework.dao.EmptyResultDataAccessException e){return null;}
 
     }
 
