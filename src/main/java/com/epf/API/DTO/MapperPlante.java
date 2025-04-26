@@ -8,7 +8,7 @@ import java.util.List;
 @Component
 public class MapperPlante {
 
-    public DTOPlante toDTOPlante(Plante plante) {
+    public static DTOPlante toDTOPlante(Plante plante) {
         return new DTOPlante(
                 plante.getId(),
                 plante.getNom(),
@@ -23,10 +23,10 @@ public class MapperPlante {
     }
 
     public List<DTOPlante> toListDTOPlante(List<Plante> plantes) {
-        return plantes.stream().map(this::toDTOPlante).toList();
+        return plantes.stream().map(MapperPlante::toDTOPlante).toList();
     }
 
-    public Plante toPlanteEntity(DTOPlante dtoPlante) {
+    public static Plante toPlanteEntity(DTOPlante dtoPlante) {
         return new Plante(
                 dtoPlante.getId_plante(),
                 dtoPlante.getNom(),
@@ -40,7 +40,7 @@ public class MapperPlante {
         );
     }
 
-    public List<Plante> toListPlanteEntity(List<DTOPlante> dtoPlantes) {
-        return dtoPlantes.stream().map(this::toPlanteEntity).toList();
+    public static List<Plante> toListPlanteEntity(List<DTOPlante> dtoPlantes) {
+        return dtoPlantes.stream().map(MapperPlante::toPlanteEntity).toList();
     }
 }

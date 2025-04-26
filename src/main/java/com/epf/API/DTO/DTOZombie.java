@@ -17,6 +17,7 @@ public class DTOZombie {
         this.point_de_vie = point_de_vie;
         this.attaque_par_seconde = attaque_par_seconde;
         this.degat_attaque = degat_attaque;
+        this.vitesse_de_deplacement= vitesse_de_deplacement;
         this.chemin_image = chemin_image;
         this.id_map = id_map;
     }

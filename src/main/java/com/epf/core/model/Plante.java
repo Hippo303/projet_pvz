@@ -11,7 +11,7 @@ public class Plante {
     private String effet;
     private String chemin_image;
 
-    public Plante(Integer id_plante, String nom, Integer point_de_vie, double attaque_par_seconde, Integer degat_attaque, Integer cout, double soleil_par_seconde, String effet, String cheminImage) {
+    public Plante(Integer id_plante, String nom, Integer point_de_vie, double attaque_par_seconde, Integer degat_attaque, Integer cout, double soleil_par_seconde, String effet, String chemin_image) {
         this.id_plante = id_plante;
         this.nom = nom;
         this.point_de_vie = point_de_vie;
@@ -73,8 +73,8 @@ public class Plante {
     public String getCheminImage() {
         return chemin_image;
     }
-    public void setCheminImage(String cheminImage) {
-        this.chemin_image = cheminImage;
+    public void setCheminImage(String chemin_image) {
+        this.chemin_image = chemin_image;
     }
     @Override
     public String toString() {
@@ -87,7 +87,7 @@ public class Plante {
                 ", cout=" + cout +
                 ", soleil_par_seconde=" + soleil_par_seconde +
                 ", effet='" + effet + '\'' +
-                ", cheminImage='" + chemin_image + '\'' +
+                ", chemin_image='" + chemin_image + '\'' +
                 '}';
     }
 

@@ -13,6 +13,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         // Indique à Spring où trouver les images à servir
         registry.addResourceHandler("/images/**")
-                .addResourceLocations("/images/", "classpath:/webapp/images/");
+                .addResourceLocations("/images/", "classpath:/webapp/images/", "classpath:/static/images/");
     }
+
 }

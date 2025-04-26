@@ -8,7 +8,7 @@ import java.util.List;
 @Component
 public class MapperMap {
 
-    public DTOMap toDTOMap(Map map) {
+    public static DTOMap toDTOMap(Map map) {
         return new DTOMap(
                 map.getId(),
                 map.getLigne(),
@@ -17,11 +17,11 @@ public class MapperMap {
         );
     }
 
-    public List<DTOMap> toListDTOMap(List<Map> maps) {
-        return maps.stream().map(this::toDTOMap).toList();
+    public static List<DTOMap> toListDTOMap(List<Map> maps) {
+        return maps.stream().map(MapperMap::toDTOMap).toList();
     }
 
-    public Map toMapEntity(DTOMap dtoMap) {
+    public static Map toMapEntity(DTOMap dtoMap) {
         return new Map(
                 dtoMap.getId_map(),
                 dtoMap.getLigne(),
@@ -31,6 +31,6 @@ public class MapperMap {
     }
 
     public List<Map> toListMapEntity(List<DTOMap> dtoMaps) {
-        return dtoMaps.stream().map(this::toMapEntity).toList();
+        return dtoMaps.stream().map(MapperMap::toMapEntity).toList();
     }
 }

@@ -7,7 +7,7 @@ import java.util.List;
 
 @Component
 public class MapperZombie {
-    public DTOZombie toDTOZombie(Zombie zombie) {
+    public static DTOZombie toDTOZombie(Zombie zombie) {
         return new DTOZombie(
                 zombie.getId(),
                 zombie.getNom(),
@@ -18,11 +18,11 @@ public class MapperZombie {
                 zombie.getchemin_image(),
                 zombie.getid_map());
     }
-    public List<DTOZombie> toListDTOZombie(List<Zombie> zombie) {
-        return zombie.stream().map(this::toDTOZombie).toList();
+    public static List<DTOZombie> toListDTOZombie(List<Zombie> zombie) {
+        return zombie.stream().map(MapperZombie::toDTOZombie).toList();
     }
 
-    public Zombie toZombieEntity(DTOZombie dtozombie) {
+    public static Zombie toZombieEntity(DTOZombie dtozombie) {
         return new Zombie(
                 dtozombie.getId_zombie(),
                 dtozombie.getNom(),
@@ -33,8 +33,8 @@ public class MapperZombie {
                 dtozombie.getChemin_image(),
                 dtozombie.getId_map());
     }
-    public List<Zombie> toListZombieEntity(List<DTOZombie> dtozombie) {
-        return dtozombie.stream().map(this::toZombieEntity).toList();
+    public static List<Zombie> toListZombieEntity(List<DTOZombie> dtozombie) {
+        return dtozombie.stream().map(MapperZombie::toZombieEntity).toList();
     }
 
 

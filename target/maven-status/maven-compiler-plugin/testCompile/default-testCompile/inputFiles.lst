@@ -1,3 +1,6 @@
-D:\4ème année\java\projet_pvz\src\test\java\testspersistance\testsplante.java
-D:\4ème année\java\projet_pvz\src\test\java\testspersistance\testszombie.java
-D:\4ème année\java\projet_pvz\src\test\java\testspersistance\testszombiedao.java
+D:\4ème année\java\projet_pvz\src\test\java\tests\api\mapper\testsmappermap.java
+D:\4ème année\java\projet_pvz\src\test\java\tests\api\mapper\testsmapperplante.java
+D:\4ème année\java\projet_pvz\src\test\java\tests\api\mapper\testsmapperzombie.java
+D:\4ème année\java\projet_pvz\src\test\java\tests\core\model\testsmap.java
+D:\4ème année\java\projet_pvz\src\test\java\tests\core\model\testsplante.java
+D:\4ème année\java\projet_pvz\src\test\java\tests\core\model\testszombie.java

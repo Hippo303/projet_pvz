@@ -1,3 +1,6 @@
-testspersistance\testszombiedao.class
-testspersistance\testszombie.class
-testspersistance\testsplante.class
+tests\api\mapper\testsmapperzombie.class
+tests\core\model\testszombie.class
+tests\core\model\testsmap.class
+tests\api\mapper\testsmappermap.class
+tests\api\mapper\testsmapperplante.class
+tests\core\model\testsplante.class
